@@ -2,14 +2,267 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ * 
  *= require_self
  */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+@import url(https://fonts.googleapis.com/css?family=Vollkorn|Roboto);
+
+html, body{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*メニューバー*/
+
+
+/*タイトル*/
+
+.top_introduction video{
+  position: relative;
+  top: 0;
+  height: auto;
+  margin: 0 auto;
+}
+
+/*フォームのデザイン*/
+.input_container {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: black;
+  background-color: white;
+  width: 90%;
+  border-radius: 10px;
+  padding: 20px 20px 40px 20px;
+  opacity: 0.8;
+}
+.input_container h2 {
+  font-size: 20px;
+  color: #666666;
+  width: 80%;
+  margin: 0 auto 20px auto;
+}
+
+.submit_button {
+  padding: 10px 0 10px 0;
+  width: 70%;
+  background-color: #00F;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.submit_button:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.input_button {
+  padding: 10px 0px 0px 10px;
+  margin-bottom: 10px;
+  width: 70%;
+}
+
+.button_label {
+  width: 70%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+/*ここからメインコンテンツ*/
+.main_content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+/*サービス紹介文*/
+.content_introduction {
+  font-size: 70px;
+  margin: 70px auto;
+}
+
+/*TabiTomoの魅力*/
+.attraction_title {
+  font-size: 30px;
+  margin: 30px 0 40px 0;
+  font-weight: 900;
+}
+
+.attraction {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.attraction_text1 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.attraction_text2 {
+  font-size: 18px;
+  color: #666666;
+}
+
+.container {
+  margin: 10px auto 50px auto;
+  width: 100%;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+}
+  
+/*TabiTomoの使い方*/
+ol {
+  counter-reset:number; /*数字をリセット*/
+  list-style-type: none!important; /*数字を一旦消す*/
+  width: 80%;
+  margin: 0 auto;
+}
+ol li {
+  position: relative;
+  line-height: 2em;
+  padding: 0 0.5em 0.5em 0px;
+  font-size: 25px;
+}
+
+ol li:before{
+  /* 以下数字をつける */
+  position: absolute;
+  counter-increment: number;
+  content: counter(number);
+  /*以下数字のデザイン変える*/
+  display:inline-block;
+  background: #00F;
+  color: white;
+  font-family: 'Avenir','Arial Black','Arial',sans-serif;
+  font-weight:bold;
+  font-size: 25px;
+  border-radius: 50%;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 52px;
+  text-align: center;
+  /*以下 上下中央寄せのため*/
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*レマインド登録ボタン*/
+.remind_register {
+  background-color: #00F;
+  margin: 40px auto 40px auto;
+  padding: 15px;
+  border: none;
+  width: 25%;
+  color: white;
+  cursor: pointer;
+}
+.remind_register:hover {
+  opacity: 0.7;
+  /*background-color: #3399FF;*/
+  transition: 0.3s;
+}
+
+/*最後の締めの言葉*/
+.last_message {
+  font-size: 40px;
+}
+
+.last_image img{
+  width: 80%;
+  height: auto;
+}
+
+/*フッター*/
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin: 80px auto 0 auto;
+}
+
+
+
+/*レスポンシブ対応*/
+@media screen and (min-width:500px) {
+  ol {
+  width: 100%;
+  margin: 0 auto;
+  }
+  .top_introduction h1 {
+  font-size: 30px;
+  }
+  .content_introduction {
+  font-size: 30px;
+  }  
+  .area_image {
+  display: inline-block;
+  width:50%;
+  }
+  .last_message {
+  font-size: 25px;
+  }
+  .row {
+  flex-direction: column;
+ }
+ .box2 {order: 1}
+ .box1 {order: 2}
+}
+@media screen and (min-width:768px) {
+  .input_container {
+  margin-left: 80px;
+  width: 50%;
+  }
+  ol {
+  width: 60%;
+  margin: 0 auto;
+  }
+  .top_introduction h1 {
+  font-size: 30px;
+  font-weight: bold;
+  }
+  .content_introduction {
+  font-size: 35px;
+  }  
+  .area_image {
+  display: inline-block;
+  width:33.3333333%;
+  }
+  .last_message {
+  font-size: 40px;
+  }
+  .row {
+  flex-direction: row;
+ }
+ .box1 {order: 1}
+ .box2 {order: 2}
+}
+@media screen and (min-width:1024px) {
+  .area_image {
+  display: inline-block;
+  width:33.3333333%;
+  }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TabiChannel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.min', media: 'all' %>
+    <%= stylesheet_link_tag 'bootstrap/bootstrap', media: 'all' %>
+    <%= stylesheet_link_tag 'toppages/style', media: 'all' %>
+    <%= stylesheet_link_tag 'toppages/normalize', media: 'all' %>
+    <%= stylesheet_link_tag 'toppages/animate', media: 'all' %>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <%= render 'layouts/flash_messages' %>
+    
+<div class="top_introduction">
+ <video src="/videos/topmovie.mp4" autoplay muted loop playsinline></video>
+</div>
+
+<div class="input_container">
+  <h1>TabiChannelで旅をしながら広がっていく仲間とのネットワーク</h1>
+  <h2>旅人どうしがつながり、あなたの旅をもっと素敵な思い出に</h2>
+  <div class="button_label">名前:</div>
+  <div><input type="text" name="name" class="input_button"></div>
+  <div class="button_label">メールアドレス:</div>
+  <div><input type="email" name="email" class="input_button"></div>
+  <div class="button_label">パスワード:</div>
+  <div><input type="password" name="password" class="input_button"></div>
+  <input type="submit" value="新規登録" class="submit_button">
+  <p>アカウントをお持ちですか？<a href="#"> ログイン</a></p>
+</div>
+
+<div class="main_content">
+  <!-- TabiTomo紹介文 -->
+  <div class="content_introduction animated fadein">
+    TabiTomoは、世界中を旅するバックパッカーどうしの交流を深める掲示板サービスです
+  </div>
+  
+
+  <!--TabiTomoの魅力-->
+  <div class="attraction_title animated fadein">
+    <span style="border-bottom: solid 1px #00F;">TabiChannelの魅力</span>
+  </div>
+  
+  <div class="attraction">
+    
+    <div class="container animated fadein">  
+      <div class="row">
+        <div class="col-sm-6">
+          <img src="<%= asset_path "connection.jpg" %>" alt="人との繋がり" />
+        </div>
+        <div class="col-sm-6 attraction_text">
+          <p class="attraction_text1">旅人どうしで情報を交換し、互いの旅をより快適に</p>
+            <p class="attraction_text2">
+              「あそこのお店が美味しかった」「穴場見つけたよ」「オススメの観光コースを発見しました」など
+              自分の知らなかった旅先の魅力や、奥深さを互いに共有できます。
+           </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container animated fadein">  
+      <div class="row"> 
+        <div class="col-sm-6 box1 attraction_text">
+          <p class="attraction_text1">旅先で、近くにいる人や気になった人と合流できる</p>
+            <p class="attraction_text2">
+              旅先での出会いは特別なもの。現地の人との交流はもちろん、
+              現地でばったり会う日本人もかけがいのない出会いの機会です。
+            </p>
+        </div>
+        <div class="col-sm-6 box2">
+          <img src="<%= asset_path "Frend.jpg" %>" alt="旅先での出会い" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--TabiTomoの使い方-->
+  <div class="attraction_title animated fadein">
+    <span style="border-bottom: solid 1px #00F;">TabiChannelの使い方</span>
+  </div>
+  <!--使い方ステップ-->
+  <ol>
+    <li class="animated fadein">アカウント作成</li>
+    <li class="animated fadein">グループ参加</li>
+    <li class="animated fadein">メッセージの交換</li>
+  </ol>
+  
+  <!--再度、登録を促す-->
+  <div href="#" class="remind_register">今すぐ登録する</div>
+  
+  <!--最後の締めの言葉-->
+  <div class="last_message animated fadein">
+    <p>あなたの旅をもっと素敵なものに</p>
+  </div>
+  
+  <div class="last_image animated fadein">
+     <%= image_tag('freedom1.jpg') %>
+  </div>
+
+  
+</div>
+
+
+    <footer>
+      
+        <!--コピーライト-->
+        <div id="copyright">
+          Copyright &copy; 2019 TabiChannel All Rights Reserved.
+        </div>
+        
+        
+    </footer>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </body>
+</html>

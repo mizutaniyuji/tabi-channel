@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+@import url(https://fonts.googleapis.com/css?family=Vollkorn|Roboto);
+
+body{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("./image/Login_image2.jpg");
+  　background-size: cover;
+}
+
+/*メニューバー*/
+
+
+/*フォームのデザイン*/
+.input_container {
+  padding: 30px 50px 50px 50px;
+  background-color: white;
+  opacity: 0.8;
+  color: black;
+  width: 80%;
+  margin: 140px auto 0 auto;
+  border-radius: 10px;
+}
+.input_container h2 {
+  font-size: 20px;
+  color: #666666;
+  width: 100%;
+  margin: 0 auto 20px auto;
+}
+
+.submit_button {
+  padding: 10px 0 10px 0;
+  width: 100%;
+  background-color: #00F;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.submit_button:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.input_button {
+  padding: 10px 0px 0px 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.button_label {
+  text-align: left;
+}
+
+
+
+/*フッター*/
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
+/*レスポンシブ対応*/
+@media screen and (min-width:768px) {
+  .input_container {
+    width: 60%;
+  }
+}
