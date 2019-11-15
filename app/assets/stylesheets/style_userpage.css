@@ -240,14 +240,14 @@ ul {
 
 /*編集ページ用　ボタンの装飾/
 /*フォームのデザイン*/
-.input_container h2 {
+.input_edit_container h2 {
   font-size: 20px;
   color: #666666;
   width: 100%;
   margin: 0 auto 20px auto;
 }
 
-.submit_button {
+.submit_edit_button {
   padding: 10px 0 10px 0;
   width: 100%;
   background-color: #00F;
@@ -255,19 +255,19 @@ ul {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.submit_button:hover {
+.submit_edit_button:hover {
   opacity: 0.7;
   transition: 0.3s;
 }
 
-.input_button {
+.input_edit_button {
   padding: 10px 0px 0px 10px;
   margin-bottom: 10px;
   width: 100%;
   border: solid 1px #DDDDDD;
 }
 
-.textarea_form {
+.textarea_edit_form {
   width: 100%;
   border: solid 1px #DDDDDD;
   height: 100px;
@@ -278,7 +278,7 @@ ul {
   background-color: #DDDDDD;
   color: black;
 }
-.button_label {
+.button_edit_label {
   text-align: left;
 }
 

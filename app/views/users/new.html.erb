@@ -1,4 +1,27 @@
-<div class="top_introduction">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TabiChannel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.min', media: 'all' %>
+    <%= stylesheet_link_tag 'bootstrap/bootstrap', media: 'all' %>
+    <%= stylesheet_link_tag 'style', media: 'all' %>
+    <%= stylesheet_link_tag 'normalize', media: 'all' %>
+    <%= stylesheet_link_tag 'animate', media: 'all' %>
+    
+  </head>
+
+  <body>
+    
+    
+<!--ヘッダー-->
+    <%= render 'layouts/flash_messages' %>
+    
+    <div class="top_introduction">
  <video src="/videos/topmovie.mp4" autoplay muted loop playsinline></video>
 </div>
 
@@ -85,3 +108,23 @@
 
   
 </div>
+
+
+
+
+
+    
+  <footer>
+      <!--コピーライト-->
+      <div id="copyright">
+        Copyright &copy; 2019 TabiChannel All Rights Reserved.
+      </div>
+  </footer>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+  
+</html>

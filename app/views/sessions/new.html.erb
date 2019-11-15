@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TabiChannel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.min', media: 'all' %>
+    <%= stylesheet_link_tag 'bootstrap/bootstrap', media: 'all' %>
+    <%= stylesheet_link_tag 'style_signup', media: 'all' %>
+    
+  </head>
+
+  <body>
+
+<!--ヘッダー-->
+    <%= render 'layouts/flash_messages' %>
+    
+<!--ログイン-->
+<div class="input_container">
+  <h1>Sign Up</h1>
+  <h2>以下に、登録したメールアドレスとパスワードを入力してください</h2>
+  <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+  <%= f.label :email, 'メールアドレス：', class: "button_label" %>
+  <%= f.email_field :email, class: "input_button" %>
+  <%= f.label :password, "パスワード：",　class: "button_label" %>
+  <%= f.password_field :password, class: "input_button" %>
+  
+  <%= f.submit "ログイン", class: "submit_button" %>
+  <% end %>
+  <p>アカウントをお持ちではないですか？<%= link_to "新規登録", toppage_path %></p>
+</div>
+
+    
+  <footer>
+      <!--コピーライト-->
+      <div id="copyright">
+        Copyright &copy; 2019 TabiChannel All Rights Reserved.
+      </div>
+  </footer>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+  
+</html>
+
+

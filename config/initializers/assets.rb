@@ -14,9 +14,13 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( bootstrap/bootstrap.css )
 Rails.application.config.assets.precompile += %w( bootstrap/bootstrap.min.css )
-Rails.application.config.assets.precompile += %w( toppages/style.css )
-Rails.application.config.assets.precompile += %w( toppages/normalize.css )
-Rails.application.config.assets.precompile += %w( toppages/animate.css )
+Rails.application.config.assets.precompile += %w( style.css )
+Rails.application.config.assets.precompile += %w( normalize.css )
+Rails.application.config.assets.precompile += %w( animate.css )
+Rails.application.config.assets.precompile += %w( style_area.css )
+Rails.application.config.assets.precompile += %w( style_message.css )
+Rails.application.config.assets.precompile += %w( style_signup.css )
+Rails.application.config.assets.precompile += %w( style_userpage.css )
 
 # JSファイル
 Rails.application.config.assets.precompile += ['*.js']
