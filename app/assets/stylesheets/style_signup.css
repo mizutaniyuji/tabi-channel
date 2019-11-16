@@ -15,7 +15,7 @@ body{
 
 /*フォームのデザイン*/
 .input_container {
-  padding: 30px 50px 50px 50px;
+  padding: 30px auto 50px auto;
   background-color: white;
   opacity: 0.8;
   color: black;
@@ -23,6 +23,11 @@ body{
   margin: 140px auto 0 auto;
   border-radius: 10px;
 }
+
+.input_container h1 {
+  padding-bottom: 20px;
+}
+
 .input_container h2 {
   font-size: 20px;
   color: #666666;

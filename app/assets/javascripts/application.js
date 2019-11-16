@@ -1,4 +1,5 @@
-
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
 
 // 特定の位置までスクロール

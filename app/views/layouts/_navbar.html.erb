@@ -2,7 +2,7 @@
 <!--メニューバー-->
 <nav>
   <ul id="main">
-    <li>マイページ</li>
+    <li><%= link_to "マイページ", user_path, style:"color:white; text-decoration:none;" %></li>
     <li>コミュニティ一覧
       <ul class="drop">
         <div>
@@ -15,7 +15,7 @@
         </div>
       </ul>
     </li>
-    <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+    <li><%= link_to "ログアウト", logout_path, method: :delete, style:"color:white; text-decoration:none;" %></li>
   </ul>
 </nav>
 

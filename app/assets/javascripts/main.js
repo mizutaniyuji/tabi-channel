@@ -11,3 +11,7 @@ $(".fadein").waypoint(function(direction) {
     this.destroy();
   }
 }, { offset: "100%" });
+
+$(function(){
+  setTimeout("$('.alert').fadeOut('slow')", 3000) 
+})
