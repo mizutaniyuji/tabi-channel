@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def create
@@ -21,6 +22,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "プロフィールを編集しました"
+      redirect_to @user
+    else
+      flash[:danger] = "プロフィール編集に失敗しました"
+      render :edit
+    end
   end
   
   def new
@@ -30,7 +39,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :introduction)
   end
   
 end

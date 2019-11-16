@@ -126,6 +126,10 @@ ul {
   margin-bottom: 15px;
 }
 
+.introduction p{
+  font-size: 18px
+}
+
 .user_container {
   text-decoration: none;
   margin-left: 30px;
@@ -253,7 +257,6 @@ ul {
   background-color: #00F;
   color: white;
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 .submit_edit_button:hover {
   opacity: 0.7;
@@ -267,18 +270,17 @@ ul {
   border: solid 1px #DDDDDD;
 }
 
-.textarea_edit_form {
+.input_edit_form {
   width: 100%;
   border: solid 1px #DDDDDD;
-  height: 100px;
+  margin-bottom: 10px;
 }
-.image_upload {
+.image_upload_container {
   width: 40%;
   padding: 5px 0 5px 0;
-  background-color: #DDDDDD;
-  color: black;
+  margin: 0 auto;
 }
-.button_edit_label {
+.button_label {
   text-align: left;
 }
 
