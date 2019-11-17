@@ -14,10 +14,9 @@ ul {
   padding: 0;
 }
 
-/*ドロップダウンメニュー*/
+/*メニュー*/
 
 #main {
-  position: relative;
   list-style: none;
   background: black;
   width: 100%;
@@ -31,121 +30,21 @@ ul {
 }
 #main li {
   display: inline-block;
-  position: relative;
-  left: 0;
   padding: 15px 20px;
   cursor: pointer;
   z-index: 5;
   font-size: 15px;
 }
 
-.drop {
-  overflow: hidden;
-  list-style: none;
-  position: absolute;
-  padding: 0;
-  width: 100%;
-  left: 0;
-  top: 48px;
-}
-.drop div {
-  -webkit-transform: translate(0, -100%);
-  -moz-transform: translate(0, -100%);
-  -ms-transform: translate(0, -100%);
-  transform: translate(0, -100%);
-  -webkit-transition: all 0.5s 0.1s;
-  -moz-transition: all 0.5s 0.1s;
-  -ms-transition: all 0.5s 0.1s;
-  transition: all 0.5s 0.1s;
-  position: relative;
-}
-.drop li {
-  display: block;
-  padding: 0;
-  width: 100%;
-  background: black;
-  color: white;
-}
-.drop li:hover {
-  background: #00F;
-}
-.drop a {
-  color: white;
-}
-.drop a:hover {
-  text-decoration: none;
-}
-
-#main li:nth-child(1):hover ul div {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-  background-color: #00F;
-}
-#main li:nth-child(1):hover ~ #marker {
-  -webkit-transform: translate(0px, 0);
-  -moz-transform: translate(0px, 0);
-  -ms-transform: translate(0px, 0);
-  transform: translate(0px, 0);
-  background-color: #00F;
-}
-
-#main li:nth-child(2):hover ul div {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-  background-color: #00F;
-}
-#main li:nth-child(2):hover ~ #marker {
-  -webkit-transform: translate(120px, 0);
-  -moz-transform: translate(120px, 0);
-  -ms-transform: translate(120px, 0);
-  transform: translate(120px, 0);
-  background-color: #00F;
-}
-
-#main li:nth-child(3):hover ul div {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-  background-color: #00F;
-}
-#main li:nth-child(3):hover ~ #marker {
-  -webkit-transform: translate(240px, 0);
-  -moz-transform: translate(240px, 0);
-  -ms-transform: translate(240px, 0);
-  transform: translate(240px, 0);
-  background-color: #00F;
-}
-
-#main li:nth-child(4):hover ul div {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-  background-color: #00F;
-}
-#main li:nth-child(4):hover ~ #marker {
-  -webkit-transform: translate(360px, 0);
-  -moz-transform: translate(360px, 0);
-  -ms-transform: translate(360px, 0);
-  transform: translate(360px, 0);
-  background-color: #00F;
-}
-
 
 /*その他メニュー*/
+
 .menu_bar {
   list-style: none;
   background-color: black;
   color: white;
   width: 100%;
   height: 41px;
-  position: absolute;
-  top: 0;
 }
 .inline_element li{
   display: inline;
@@ -165,13 +64,29 @@ ul {
   float: right;
 }
 
-
-/*トップ画像*/
-.top_image img{
-  width: 100%;
+/*メインコンテンツ*/
+.top_container {
+  margin-top: 30px;
 }
 
-/*メインコンテンツ*/
+.community_container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.community_create_button {
+  margin: 30px 0;
+}
+
+.community_create_button a{
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  background-color: #00F;
+}
+.community_create_button a:hover {
+ opacity: 0.6;
+ transition: 0.3s;
+}
 
 .area_name {
   font-size: 30px;
@@ -180,51 +95,34 @@ ul {
 
 .area_introduction {
     color: #888888;
-    font-size: 15px;
+    font-size: 18px;
     width: 60%;
     margin: 0 auto;
 }
 
-.community {
-  margin: 20px 0 20px 0;
-  font-size: 20px;
-}
-
 .community_item {
   background-color: #F5F5F5;
+  display: block;
   align-items: center;
   color: black;
-  margin: 0 auto 15px auto;
-  display: flex;
-  width: 100%;
+  width: 400px;
+  margin: 10px auto;
+  padding: 10px;
 }
-.community_container {
-  width: 80%;
-  margin: 0 auto;
-}
+
 .community_container a:hover{
   color: black;
   text-decoration: none;
 }
-.community_item img {
-  width: 140px;
-  height: 80px;
-}
+
 .community_title {
-  width: 80%;
   margin: 0 auto;
   text-align: left;
+  width: 100%;
 }
 .community_title p {
-  position: relative;
-  top:0;
-  left:0px;
   font-size: 12px;
   color: gray;
-}
-.item_overall {
-  display: inline-block;
-  width: 100%;
 }
 
 /*ボタン装飾*/
@@ -242,27 +140,53 @@ ul {
   animation-direction: alternate;
 }
 
-/* Hang */
-@keyframes hang {
-  50% {
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(6px);
-  }
+/*コミュニティ作成ページ*/
+/*フォームのデザイン*/
+.input_container {
+  padding: 30px auto 50px auto;
+  background-color: white;
+  opacity: 0.8;
+  color: black;
+  width: 60%;
+  margin: 140px auto 0 auto;
+  border-radius: 10px;
 }
 
-
-/* Hang */
-@keyframes hang {
-    50% {
-        transform: translateY(3px);
-    }
-
-    100% {
-        transform: translateY(6px);
-    }
+.input_container h1 {
+  padding-bottom: 20px;
 }
+
+.input_container h2 {
+  font-size: 20px;
+  color: #666666;
+  width: 100%;
+  margin: 0 auto 20px auto;
+}
+
+.submit_button {
+  padding: 10px 0 10px 0;
+  width: 100%;
+  background-color: #00F;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.submit_button:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.input_button {
+  padding: 10px 0px 0px 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.button_label {
+  text-align: left;
+  display: block;
+}
+
 
 footer {
   position: relative;
@@ -278,16 +202,13 @@ footer {
 /*  }*/
 /*}*/
 @media screen and (min-width:768px) {
-
+  .community_item {
+  width: 600px;
+  }
 }
-@media screen and (min-width:900px) {
-    .item_overall {
-    display: inline;
-    margin-right: 10px;
-    }
-  .community_container {
-  width: 80%;
-  margin: 0 auto;
+@media screen and (min-width:1024px) {
+  .community_item {
+  width: 800px;
   }
 }
 

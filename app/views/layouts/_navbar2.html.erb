@@ -1,0 +1,10 @@
+<header>
+  <!--メニューバー-->
+  <nav>
+    <ul id="main">
+      <li><%= link_to "マイページ", user_path(current_user), style:"color:white; text-decoration:none;" %></li>
+      <li><%= link_to "コミュニティ一覧", communities_path, style:"color:white; text-decoration:none;" %></li>
+      <li><%= link_to "ログアウト", logout_path, method: :delete, style:"color:white; text-decoration:none;" %></li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TabiChannel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.min', media: 'all' %>
+    <%= stylesheet_link_tag 'bootstrap/bootstrap', media: 'all' %>
+    <%= stylesheet_link_tag 'style_area', media: 'all' %>
+    <%= stylesheet_link_tag 'normalize', media: 'all' %>
+    <%= stylesheet_link_tag 'animate', media: 'all' %>
+    
+  </head>
+
+  <body>
+    
+    
+<!--ヘッダー-->
+<%= render 'layouts/navbar2' %>
+<%= render 'layouts/flash_messages' %>
+
+<!--動画-->
+<!--<div class="top_movie">-->
+<!-- <video src="/videos/community_movie.mp4" autoplay muted loop playsinline></video>-->
+<!--</div>-->
+
+<!--コミュニティ一覧-->
+<div class="top_container">
+    <div class="area_name">コミュニティ一覧</div>
+    <div class="area_introduction">
+        <p>掲示板を作ったり、掲示板に参加したりして、
+        世界中を旅する人との交流を広げよう。
+        </p>
+    </div>
+</div>
+    
+<div class="community_container">
+        
+  <!--コミュニティ作成ボタン-->
+  <div class="community_create_button">
+    <%= link_to "新しいコミュニティを作成", new_community_path, style:"color: white" %>
+  </div>
+        
+    <!--コミュニティ一覧-->
+  <% if @communities.any? %>
+    <% @communities.each do |community| %>
+    <div class="item_overall">
+      <%= link_to  community, class: "hover" do %>
+        <div class="community_item">
+            <div class="community_title">
+                <p>作成者：<%= community.creater_name %><br>作成日時：<%= community.created_at %><br>エリア：<%= community.area %></p>
+                <%= community.title %>
+            </div>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  <% else %>
+  <h3>まだコミュニティはありません</h3>
+  <% end %>
+        
+<%= paginate @communities %>
+
+</div>
+
+
+
+  <footer>
+      <!--コピーライト-->
+      <div id="copyright">
+        Copyright &copy; 2019 TabiChannel All Rights Reserved.
+      </div>
+  </footer>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+  
+</html>

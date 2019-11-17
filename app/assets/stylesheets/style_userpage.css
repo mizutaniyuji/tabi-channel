@@ -6,6 +6,7 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index:1;
 }
 
 /*メニューバー*/
@@ -16,7 +17,9 @@ ul {
 /*ドロップダウンメニュー*/
 
 #main {
-  position: relative;
+  position: absolute;
+  top:0;
+  left:0;
   list-style: none;
   background: black;
   width: 100%;
@@ -38,50 +41,6 @@ ul {
   font-size: 15px;
 }
 
-.drop {
-  overflow: hidden;
-  list-style: none;
-  position: absolute;
-  padding: 0;
-  width: 100%;
-  left: 0;
-  top: 48px;
-}
-.drop div {
-  -webkit-transform: translate(0, -100%);
-  -moz-transform: translate(0, -100%);
-  -ms-transform: translate(0, -100%);
-  transform: translate(0, -100%);
-  -webkit-transition: all 0.5s 0.1s;
-  -moz-transition: all 0.5s 0.1s;
-  -ms-transition: all 0.5s 0.1s;
-  transition: all 0.5s 0.1s;
-  position: relative;
-}
-.drop li {
-  display: block;
-  padding: 0;
-  width: 100%;
-  background: black;
-  color: white;
-}
-.drop li:hover {
-  background: #00F;
-}
-.drop a {
-  color: white;
-}
-.drop a:hover {
-  text-decoration: none;
-}
-
-#main li:nth-child(2):hover ul div {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-  background-color: #00F;
-}
 
 /*その他メニュー*/
 .menu_bar {
@@ -111,6 +70,15 @@ ul {
   float: right;
 }
 
+/*フラッシュ文*/
+.alert {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
 
 /*メインコンテンツ*/
 .top_container {
@@ -119,10 +87,11 @@ ul {
   margin: 80px auto 0 auto;
 }
 /*プロフィール画像*/
-.profile_image img{
+.profile_image {
   border-radius: 50%;
-  height: 70%;
-  width: 70%;
+  height: auto;
+  margin: 0 auto;
+  width: 80%;
   margin-bottom: 15px;
 }
 
@@ -132,8 +101,9 @@ ul {
 
 .user_container {
   text-decoration: none;
-  margin-left: 30px;
+  margin-left: 0px;
 }
+
 .user_container h1{
   font-size: 30px;
 }
@@ -176,21 +146,16 @@ ul {
 }
 
 .community_item {
-  display: flex;
   background-color: #F5F5F5;
   align-items: center;
   color: black;
+  width: 400px;
   margin: 0 auto 15px auto;
+  padding: 10px;
 }
 .community_container a:hover{
   color: black;
   text-decoration: none;
-}
-.community_item img {
-  width: 140px;
-  height: 80px;
-  position: relative;
-  left: -15px;
 }
 .community_title {
   width: 100%;
@@ -218,28 +183,6 @@ ul {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-/* Hang */
-@keyframes hang {
-  50% {
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(6px);
-  }
-}
-
-
-/* Hang */
-@keyframes hang {
-    50% {
-        transform: translateY(3px);
-    }
-
-    100% {
-        transform: translateY(6px);
-    }
 }
 
 /*編集ページ用　ボタンの装飾/
@@ -319,5 +262,17 @@ footer {
   bottom: 0;
   width: 100%;
   margin: 0 auto;
+  }
+  .community_item {
+  width: 400px;
+  }
+  .user_container {
+  margin-left: 30px;
+}
+}
+
+@media screen and (min-width:1024px) {
+  .community_item {
+  width: 550px;
   }
 }

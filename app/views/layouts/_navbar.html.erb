@@ -1,22 +1,21 @@
 <header>
-<!--メニューバー-->
-<nav>
-  <ul id="main">
-    <li><%= link_to "マイページ", user_path, style:"color:white; text-decoration:none;" %></li>
-    <li>コミュニティ一覧
-      <ul class="drop">
-        <div>
-            <li>アジア</li>
-            <li>ヨーロッパ</li>
-            <li>北アメリカ</li>
-            <li>南アメリカ</li>
-            <li>アフリカ</li>
-            <li>オセアニア</li>
-        </div>
-      </ul>
-    </li>
-    <li><%= link_to "ログアウト", logout_path, method: :delete, style:"color:white; text-decoration:none;" %></li>
-  </ul>
-</nav>
-
+  <!--メニューバー-->
+  <nav>
+    <ul id="main">
+      <li><%= link_to "マイページ", user_path, style:"color:white; text-decoration:none;" %></li>
+      <li>コミュニティ一覧
+        <ul class="drop">
+          <div>
+              <li><%= link_to "アジア", asia_path, style:"color:white; text-decoration:none;" %></li>
+              <li><%= link_to "ヨーロッパ", europe_path, style:"color:white; text-decoration:none;" %></li>
+              <li><%= link_to "北アメリカ", northamerica_path, style:"color:white; text-decoration:none;" %></li>
+              <li><%= link_to "南アメリカ", southamerica_path, style:"color:white; text-decoration:none;" %></li>
+              <li><%= link_to "アフリカ", africa_path, style:"color:white; text-decoration:none;" %></li>
+              <li><%= link_to "オセアニア", oceania_path, style:"color:white; text-decoration:none;" %></li>
+          </div>
+        </ul>
+      </li>
+      <li><%= link_to "ログアウト", logout_path, method: :delete, style:"color:white; text-decoration:none;" %></li>
+    </ul>
+  </nav>
 </header>

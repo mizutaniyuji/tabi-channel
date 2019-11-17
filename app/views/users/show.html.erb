@@ -19,15 +19,14 @@
     
     
 <!--ヘッダー-->
+<%= render 'layouts/navbar2' %>
 <%= render 'layouts/flash_messages' %>
-<%= render 'layouts/navbar' %>
-    
 <!--プロフィール画像-->
 <div class="top_container">
     <div class="col-sm-5">
         <div class="profile_image">
         <% if @user.image? %>
-            <%= image_tag @user.image.url %>
+            <%= image_tag @user.image.url, :class => "profile_image"%>
         <% else %>
             <img src="https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570983635/profile_zhxwvs.png">
         <% end %>
@@ -53,8 +52,7 @@
             <!--コミュニティ一覧-->
             <a href="#" class="hover">
                 <div class="community_item">
-                    <img src="./image/freedom1.jpg" class="col-sm-4">
-                    <div class="col-sm-8 community_title">
+                    <div class="community_title">
                         <p>作成者：YUKO<br>作成日時：2019/11/2</p>
                         バンコクでバックパッカーしている人集合！！
                     </div>
@@ -63,8 +61,7 @@
             
             <a href="#" class="hover">
                 <div class="community_item">
-                    <img src="./image/freedom1.jpg" class="col-sm-4">
-                    <div class="col-sm-8 community_title">
+                    <div class="community_title">
                         <p>作成者：YUKO<br>作成日時：2019/11/2</p>
                         バンコクでバックパッカーしている人集合！！
                     </div>
@@ -73,8 +70,7 @@
             
             <a href="#" class="hover">
                 <div class="community_item">
-                    <img src="./image/freedom1.jpg" class="col-sm-4">
-                    <div class="col-sm-8 community_title">
+                    <div class="community_title">
                         <p>作成者：YUKO<br>作成日時：2019/11/2</p>
                         バンコクでバックパッカーしている人集合！！
                     </div>

@@ -21,6 +21,7 @@ Rails.application.config.assets.precompile += %w( style_area.css )
 Rails.application.config.assets.precompile += %w( style_message.css )
 Rails.application.config.assets.precompile += %w( style_signup.css )
 Rails.application.config.assets.precompile += %w( style_userpage.css )
+Rails.application.config.assets.precompile += %w( style_community_create.css )
 
 # JSファイル
 Rails.application.config.assets.precompile += ['*.js']

@@ -8,6 +8,12 @@ body{
     text-align: center;
 }
 
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /*メニューバー*/
 ul {
   margin: 0;
@@ -39,56 +45,6 @@ ul {
   font-size: 15px;
 }
 
-.drop {
-  /*overflow: hidden;*/
-  display: none;
-  list-style: none;
-  position: absolute;
-  padding: 0;
-  width: 100%;
-  left: 0;
-  top: 48px;
-}
-#main li:nth-child(2):hover .drop {
-  display: block;
-}
-
-.drop div {
-  -webkit-transform: translate(0, -100%);
-  -moz-transform: translate(0, -100%);
-  -ms-transform: translate(0, -100%);
-  transform: translate(0, -100%);
-  -webkit-transition: all 0.5s 0.1s;
-  -moz-transition: all 0.5s 0.1s;
-  -ms-transition: all 0.5s 0.1s;
-  transition: all 0.5s 0.1s;
-  position: relative;
-}
-.drop li {
-  display: block;
-  padding: 0;
-  width: 100%;
-  background: black;
-  color: white;
-}
-.drop li:hover {
-  background: #00F;
-}
-.drop a {
-  color: white;
-}
-.drop a:hover {
-  text-decoration: none;
-}
-
-#main li:nth-child(2):hover ul div {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-  background-color: #00F;
-}
-
 /*その他メニュー*/
 .menu_bar {
   list-style: none;
@@ -117,47 +73,111 @@ ul {
   float: right;
 }
 
-/*メインコンテンツ*/
-.main_content {
-  width: 70%;
-  margin: 30px auto 0 auto;
-}
-/*タイトル*/
+/*コミュニティタイトル*/
 .community_name {
-  font-size: 25px;
-  margin-bottom: 40px;
+  margin-top: 40px;
 }
-/*メッサージ全体*/
+
+/*フレックスボックス*/
+.flex_container {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.message_box {
+  text-align: center;
+  border-top: solid 1px black;
+}
+
 .message_container {
- width: 100%;
- margin: 0 auto;
+ width: 80%;
+ margin: 20px auto;
  background-color: #F0F8FF;
- border-top: solid 1px black;
- border-bottom: solid 1px black;
 }
-/*トップ画像*/
-.create_user {
+.message_container p{
+ text-align: left;
+ margin: 5px 20px 5px 20px;
+}
+
+/*投稿ボタンのデザイン*/
+.message_create_button {
+  margin: 30px 0;
+}
+
+.message_create_button a{
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  background-color: #00F;
+}
+.message_create_button a:hover {
+ opacity: 0.6;
+ transition: 0.3s;
+}
+
+/*フォームのデザイン*/
+.message_create_container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.input_container {
+  padding: 30px auto 50px auto;
+  background-color: white;
+  opacity: 0.8;
+  color: black;
+  margin: 140px auto 0 auto;
+  border-radius: 10px;
   text-align: left;
 }
 
-.user_time {
-  color: gray;
-  font-size: 12px;
-  text-align: left;
-  margin: 0;
+.submit_button {
+  padding: 10px 0 10px 0;
+  width: 100%;
+  background-color: #00F;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.message {
+.submit_button:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.input_button {
+  padding: 10px 0px 0px 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.button_label {
+  display: block;
   text-align: left;
 }
 
 
+/*フラッシュ文*/
+.alert {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
 
+#error_explanation {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
 
 footer {
-  position: absolute;
-  bottom: 0;
+  margin-top: auto;
   width: 100%;
-  margin: 30px auto 0 auto;
 }
 
 /*レスポンシブ対応*/

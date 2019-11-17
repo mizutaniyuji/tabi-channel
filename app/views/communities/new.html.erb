@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TabiChannel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.min', media: 'all' %>
+    <%= stylesheet_link_tag 'bootstrap/bootstrap', media: 'all' %>
+    <%= stylesheet_link_tag 'style_community_create', media: 'all' %>
+    
+  </head>
+
+  <body>
+
+<!--ヘッダー-->
+<%= render 'layouts/flash_messages' %>
+<%= render 'layouts/navbar2' %>
+
+<!--ログイン-->
+<div class="input_container">
+  <h1>新しいコミュニティの作成</h1>
+  <h2>エリアを選択し、コミュニティのタイトルを記入してください</h2>
+  <%= form_with(model:@community, local:true) do |f| %>
+  <%= f.label :text, "エリア：",　class: "button_label" %><br>
+  <%= f.select :area, [["アジア"], ["ヨーロッパ"],  ["北アメリカ"], ["南アメリカ"],["アフリカ"],["オセアニア"] ],  :prompt => "エリアを選択", class:"select_button"%>
+  <%= f.label :title, 'タイトル：', class: "button_label" %>
+  <%= f.text_field :title, class: "input_button" %>
+  <%= f.submit "作成", class: "submit_button" %>
+  <% end %>
+</div>
+
+    
+  <footer>
+      <!--コピーライト-->
+      <div id="copyright">
+        Copyright &copy; 2019 TabiChannel All Rights Reserved.
+      </div>
+  </footer>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+  
+</html>
+
+

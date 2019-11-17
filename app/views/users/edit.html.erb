@@ -20,14 +20,14 @@
     
 <!--ヘッダー-->
 <%= render 'layouts/flash_messages' %>
-<%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar2' %>
     
 <!--プロフィール画像-->
 <div class="top_container">
     <div class="col-sm-5">
         <div class="profile_image">
             <% if @user.image? %>
-                <%= imgae_tag @user.image.url %>
+                <%= image_tag @user.image.url %>
             <% else %>
                 <img src="https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570983635/profile_zhxwvs.png">
             <% end %>

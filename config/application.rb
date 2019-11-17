@@ -29,5 +29,7 @@ module TabiChannel
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    # 時刻を日本に
+    config.time_zone = 'Tokyo'
   end
 end

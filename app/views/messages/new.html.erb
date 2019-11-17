@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TabiChannel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.min', media: 'all' %>
+    <%= stylesheet_link_tag 'bootstrap/bootstrap', media: 'all' %>
+    <%= stylesheet_link_tag 'style_message', media: 'all' %>
+    
+  </head>
+
+  <body>
+
+<!--ヘッダー-->
+<%= render 'layouts/flash_messages' %>
+<%= render 'layouts/navbar2' %>
+
+<!--ログイン-->
+<div class="input_container">
+  <%= form_with(model: @message, local: true) do |f| %>
+  <!--エラーメッセージ-->
+  <%= render 'layouts/error_messages', model: f.object %>
+  <!--メッセージ入力-->
+  <%= f.label :content, 'メッセージを入力してください：', class: "button_label" %>
+  <%= f.text_area :content, class: "input_button", rows: 8 %>
+  <%= f.submit "投稿", class: "submit_button" %>
+  <% end %>
+</div>
+
+    
+  <footer>
+      <!--コピーライト-->
+      <div id="copyright">
+        Copyright &copy; 2019 TabiChannel All Rights Reserved.
+      </div>
+  </footer>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+  
+</html>
+
+
