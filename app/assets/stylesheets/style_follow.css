@@ -81,22 +81,34 @@ ul {
 }
 
 /*メインコンテンツ*/
+.content_wrapper {
+  position: relative;
+  top: 60px;
+}
+
+.follow_title {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .top_container {
   display: block;
-  width: 80%;
-  margin: 80px auto 0 auto;
+  width: 70%;
+  margin: 0 auto;
+  border-top: solid 1px black;
 }
 /*プロフィール画像*/
 .profile_image {
-  height: auto;
-  width: 80%;
-  margin: 0 auto;
-}
-.profile_image img {
   border-radius: 50%;
   height: auto;
   margin: 0 auto;
-  margin-bottom: 15px;
+  width: 40%;
+}
+
+.border {
+  width: 70%;
+  border-top: solid 1px black;
+  margin: 0 auto;
 }
 
 .introduction p{
@@ -105,7 +117,6 @@ ul {
 
 .user_container {
   text-decoration: none;
-  margin-left: 0px;
 }
 
 .user_container h1{
@@ -113,9 +124,20 @@ ul {
 }
 
 .user_name {
-  margin: 0 20px 15px 0;
-  font-size: 30px;
+  display: inline-block;
 }
+
+.user_name a{
+  /*padding: 0 20px 5px 0;*/
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+}
+.user_name a:hover {
+  text-decoration: none;
+  opacity: 0.6;
+}
+
 .profile_edit {
    margin: 20px 0 20px 0; 
 }
@@ -144,62 +166,16 @@ ul {
   color: #555555;
 }
 
-.community {
-  margin: 20px 0 20px 0;
-  font-size: 20px;
-}
-
-.community_item {
-  background-color: #F5F5F5;
-  align-items: center;
-  color: black;
-  width: 400px;
-  margin: 0 auto 15px auto;
-  padding: 10px;
-}
-.community_container a:hover{
-  color: black;
-  text-decoration: none;
-}
-.community_title {
-  width: 100%;
-  margin: 0 auto;
-  text-align: left;
-}
-.community_title p {
-  position: relative;
-  top:0;
-  left:0px;
-  font-size: 12px;
-  color: gray;
-}
-
-/*ボタン装飾*/
-.hover {
+/*フォロー解除ボタン*/
+.unfollow_button_div {
   display: inline-block;
-  transition-duration: 0.3s;
-  transition-property: transform;
-}
-.hover:hover {
-  transform: translateY(-6px);
-  animation-name: hover;
-  animation-duration: 0.3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  margin-left: 20px;
 }
 
 /*フォローボタンの装飾*/
-.follow_button {
-  background-color: #00F;
-  color: white;
-  padding: 5px 10px;
-}
-
 .unfollow_button {
   background-color: #FF3366;
   color: white;
-  padding: 5px 10px;
 }
 
 .follow_button:hover, .unfollow_button:hover {
@@ -207,47 +183,6 @@ ul {
   transition: 0.3s;
 }
 
-/*編集ページ用　ボタンの装飾/
-/*フォームのデザイン*/
-.input_edit_container h2 {
-  font-size: 20px;
-  color: #666666;
-  width: 100%;
-  margin: 0 auto 20px auto;
-}
-
-.submit_edit_button {
-  padding: 10px 0 10px 0;
-  width: 100%;
-  background-color: #00F;
-  color: white;
-  margin-top: 10px;
-}
-.submit_edit_button:hover {
-  opacity: 0.7;
-  transition: 0.3s;
-}
-
-.input_edit_button {
-  padding: 10px 0px 0px 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  border: solid 1px #DDDDDD;
-}
-
-.input_edit_form {
-  width: 100%;
-  border: solid 1px #DDDDDD;
-  margin-bottom: 10px;
-}
-.image_upload_container {
-  width: 40%;
-  padding: 5px 0 5px 0;
-  margin: 0 auto;
-}
-.button_label {
-  text-align: left;
-}
 
 /*フッター*/
 footer {
