@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'relationships/create'
+  get 'relationships/destroy'
   # ログインのルーティング
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
@@ -8,7 +10,13 @@ Rails.application.routes.draw do
   # ユーザーのルーティング
   root to: 'users#new'
   get "toppage", to: "users#new"
-  resources :users, only: [:show, :edit, :create, :update]
+  resources :users, only: [:show, :edit, :create, :update] do
+    member do
+      get :followings
+      get :followers
+    end
+  end
+  
   
   # コミュニティのルーティング
   resources :communities, only: [:index, :create, :new, :show]
@@ -18,5 +26,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:create, :destroy]
   end
   
+  # フォロー機能用ルーティング
+  resources :relationships, only: [:create, :destroy]
   
 end

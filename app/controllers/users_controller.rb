@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-  before_action :required_loggedin, only: [:show, :edit]
+  before_action :required_loggedin, only: [:show, :edit, :followings, :followers]
 
   def show
     @user = User.find(params[:id])
     @communities = @user.communities.order(created_at: :desc).page(params[:page])
+    counts(@user)
   end
 
   def edit

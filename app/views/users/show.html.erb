@@ -37,8 +37,8 @@
         <div class="user_name"><%= @user.name %></div>
         <!--フォロー数の表示-->
         <div class="follow_container">
-            <a href="#">フォロー数：70人</a>  
-            <a href="#">　フォロワー数：80人</a>
+            <a href="<%= followings_user_path(@user) %>">フォロー数：<%= @count_followings %>人</a>  
+            <a href="<%= followers_user_path(@user) %>">　フォロワー数：<%= @count_followers %>人</a>
         </div>
         <!--自己紹介文-->
         <div class="introduction">
@@ -46,7 +46,11 @@
         </div>
         <!--プロフィール編集-->
         <% if @user == current_user%>
-        <div class="profile_edit"><%= link_to 'プロフィール編集', edit_user_path %></div>
+            <!--ユーザー自身の場合、プロフィール編集ボタン-->
+            <div class="profile_edit"><%= link_to 'プロフィール編集', edit_user_path %></div>
+        <% else %>
+            <!--ユーザー自身ではない場合、フォローボタン-->
+            <%= render "relationships/follow_button", user: @user %>
         <% end %>
         <div class="community_container">
             <div class="community">過去に作成したコミュニティ</div>
