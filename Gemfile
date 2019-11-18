@@ -61,3 +61,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'carrierwave'
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
