@@ -21,51 +21,28 @@
 <%= render 'layouts/navbar2' %>
 <%= render 'layouts/flash_messages' %>
 
-<!--メッセージ一覧-->
-<div class="main_content">
-  <!--コミュニティ名-->
-  <h2 class="community_name"><%= @community.title %></h2>
-  <p class="create_user">コミュニティ作成者: <%= @community.creater_name %></p>
+  <!--メッセージ一覧-->
+  <div class="main_content">
+    <!--コミュニティ名-->
+    <h2 class="community_name"><%= @community.title %></h2>
+    <p class="create_user">コミュニティ作成者: <%= @community.creater_name %></p>
   
-  <div class="container-fluid">  
-    <!--メッセージ投稿ボタン-->
-    <div class="row">
-      
-      <div class="message_create_container">
-        <%= form_for([@community, @message]) do |f| %>
-        <!--エラーメッセージ-->
-        <%= render 'layouts/error_messages', model: f.object %>
-        <!--メッセージ入力-->
-        <%= f.label :content, 'メッセージを入力してください：', class: "button_label" %>
-        <%= f.text_area :content, class: "input_button", rows: 3 %>
-        <%= f.submit "投稿", class: "submit_button" %>
-        <% end %>
-      </div>
-      
-      <!--メッセージ一覧-->
-      <div class="message_container">
-      <% if @messages.any? %>
-        <% @messages.each do |message| %>
-            <div class="message_box">
-              <p class="user_time">投稿日時：<%= message.created_at %>, 投稿者：<%= link_to @message.user.name, user_path(@message.user_id)%></p> 
-              <p class="message">
-                <%= message.content %>
-              </p>
-            </div>
-        <% end %>
-        <div class="message_box"></div>
-        <%= paginate @messages %>
-  
-      <% else %>
-        <h4>まだメッセージはありません</h4>
+  <!--メッセージ投稿ボタン-->
+    <div class="message_create_container">
+      <%= form_for([@community, @message]) do |f| %>
+      <!--エラーメッセージ-->
+      <%= render 'layouts/error_messages', model: f.object %>
+      <!--メッセージ入力-->
+      <%= f.label :content, 'メッセージを入力してください：', class: "button_label" %>
+      <%= f.text_area :content, class: "input_button", rows: 3 %>
+      <%= f.submit "投稿", class: "submit_button" %>
       <% end %>
-      </div>
-      
-
-      
     </div>
     
-  </div>  
+    <!--メッセージ一覧-->
+    <%= render "messages/messages"%>
+    
+  </div>
   
 </div>
 

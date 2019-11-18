@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_173321) do
+ActiveRecord::Schema.define(version: 2019_11_18_034452) do
 
   create_table "communities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2019_11_17_173321) do
     t.string "creater_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_173321) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "communities", "users"
   add_foreign_key "messages", "communities"
   add_foreign_key "messages", "users"
 end

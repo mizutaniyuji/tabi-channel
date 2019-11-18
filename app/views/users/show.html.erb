@@ -15,8 +15,8 @@
     
   </head>
 
-  <body>
-    
+<body>
+<div class="wrapper">
     
 <!--ヘッダー-->
 <%= render 'layouts/navbar2' %>
@@ -44,39 +44,15 @@
         <div class="introduction">
             <p><%= @user.introduction %></p>
         </div>
-        
+        <!--プロフィール編集-->
+        <% if @user == current_user%>
         <div class="profile_edit"><%= link_to 'プロフィール編集', edit_user_path %></div>
-   
+        <% end %>
         <div class="community_container">
-            <div class="community">参加しているコミュニティ</div>
-            <!--コミュニティ一覧-->
-            <a href="#" class="hover">
-                <div class="community_item">
-                    <div class="community_title">
-                        <p>作成者：YUKO<br>作成日時：2019/11/2</p>
-                        バンコクでバックパッカーしている人集合！！
-                    </div>
-                </div>
-            </a>
-            
-            <a href="#" class="hover">
-                <div class="community_item">
-                    <div class="community_title">
-                        <p>作成者：YUKO<br>作成日時：2019/11/2</p>
-                        バンコクでバックパッカーしている人集合！！
-                    </div>
-                </div>
-            </a>
-            
-            <a href="#" class="hover">
-                <div class="community_item">
-                    <div class="community_title">
-                        <p>作成者：YUKO<br>作成日時：2019/11/2</p>
-                        バンコクでバックパッカーしている人集合！！
-                    </div>
-                </div>
-            </a>
-            
+            <div class="community">過去に作成したコミュニティ</div>
+            <!--過去に作成したコミュニティ一覧-->
+            <%= render "communities/communities" %>
+        
         </div>
         
     </div>
@@ -95,6 +71,8 @@
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+</div>    
 </body>
   
 </html>

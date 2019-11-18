@@ -2,7 +2,8 @@ class User < ApplicationRecord
     before_save {self.email.downcase!}
     has_secure_password
     
-    has_many :messages
+    has_many :messages, dependent: :destroy
+    has_many :communities, dependent: :destroy
     
     mount_uploader :image, ImageUploader
     

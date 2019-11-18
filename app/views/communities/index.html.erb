@@ -44,25 +44,8 @@
     <%= link_to "新しいコミュニティを作成", new_community_path, style:"color: white" %>
   </div>
         
-    <!--コミュニティ一覧-->
-  <% if @communities.any? %>
-    <% @communities.each do |community| %>
-    <div class="item_overall">
-      <%= link_to  community, class: "hover" do %>
-        <div class="community_item">
-            <div class="community_title">
-                <p>作成者：<%= community.creater_name %><br>作成日時：<%= community.created_at %><br>エリア：<%= community.area %></p>
-                <%= community.title %>
-            </div>
-        </div>
-      <% end %>
-    </div>
-    <% end %>
-  <% else %>
-  <h3>まだコミュニティはありません</h3>
-  <% end %>
-        
-<%= paginate @communities %>
+  <!--全てのコミュニティ一覧-->
+  <%= render "communities/communities" %>
 
 </div>
 

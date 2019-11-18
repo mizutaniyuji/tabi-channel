@@ -15,7 +15,14 @@ class MessagesController < ApplicationController
       render community_path(@community)
     end
   end
-
+  
+  def destroy
+    @community = Community.find(params[:community_id])
+    @message = Message.find(params[:id])
+    @message.destroy
+    flash[:success] = "メッセージを削除しました"
+    redirect_to community_path(@community)
+  end
   
   private
   

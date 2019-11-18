@@ -1,0 +1,22 @@
+<div class="message_container">
+<% if @messages.any? %>
+  <% @messages.each do |message| %>
+      <div class="message_box">
+        <p class="user_time">投稿日時：<%= message.created_at %>, 投稿者：<%= link_to message.user.name, user_path(message.user_id)%></p> 
+        <p class="message">
+          <%= message.content %>
+        </p>
+        <p>
+        <% if message.user == current_user %>
+        <%= link_to "削除", [@community, message], method: :delete, data: {confirm: "メッセージを削除しますか？"} %>
+        <% end %>
+        </p>
+      </div>
+  <% end %>
+  <div class="message_box"></div>
+  <%= paginate @messages %>
+
+<% else %>
+  <h4>まだメッセージはありません</h4>
+<% end %>
+</div>

@@ -75,7 +75,8 @@ ul {
 
 /*コミュニティタイトル*/
 .community_name {
-  margin-top: 40px;
+  width:80%;
+  margin: 40px auto 0 auto;
 }
 
 /*フレックスボックス*/

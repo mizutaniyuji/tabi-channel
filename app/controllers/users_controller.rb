@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @communities = @user.communities.order(created_at: :desc).page(params[:page])
   end
 
   def edit
@@ -18,7 +19,6 @@ class UsersController < ApplicationController
       flash.now[:danger] = "登録に失敗しました"
       render :new
     end
-    
   end
 
   def update

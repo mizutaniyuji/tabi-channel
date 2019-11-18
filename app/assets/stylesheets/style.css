@@ -194,6 +194,16 @@ ol li:before{
   height: auto;
 }
 
+/*フラッシュ文*/
+.alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
 /*フッター*/
 footer {
   position: relative;

@@ -14,11 +14,11 @@ class CommunitiesController < ApplicationController
   end
   
   def new
-    @community = Community.new
+    @community = current_user.communities.build
   end
 
   def create
-    @community = Community.new(community_params)
+    @community = current_user.communities.build(community_params)
     @community.creater_name = current_user.name
     if @community.save
       flash[:success] = "新しいコミュニティの作成に成功しました"
@@ -28,7 +28,6 @@ class CommunitiesController < ApplicationController
       render communities_path
     end
   end
-
   
   private
   

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   # メッセージのルーティング
   resources :communities do
-    resources :messages, only: [:create, :new, :destroy]
+    resources :messages, only: [:create, :destroy]
   end
   
   
