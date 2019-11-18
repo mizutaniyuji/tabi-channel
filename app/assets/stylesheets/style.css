@@ -15,10 +15,11 @@ html, body{
 
 /*タイトル*/
 
-.top_introduction video{
+.top_movie video{
   height: auto;
   width: 1500px;
   margin: 0 auto;
+  display: none;
 }
 
 /*縮めた時に出てくるメニュー*/
@@ -169,7 +170,7 @@ ol li:before{
 }
 
 /*レマインド登録ボタン*/
-.remind_register {
+.remind {
   background-color: #00F;
   margin: 40px auto 40px auto;
   padding: 15px;
@@ -178,7 +179,7 @@ ol li:before{
   color: white;
   cursor: pointer;
 }
-.remind_register:hover {
+.remind:hover {
   opacity: 0.7;
   /*background-color: #3399FF;*/
   transition: 0.3s;
@@ -220,9 +221,6 @@ footer {
   width: 100%;
   margin: 0 auto;
   }
-  .top_introduction video{
-  display: none;
-  }
   .input_container {
   position: relative;
   top: 50px;
@@ -250,6 +248,9 @@ footer {
  .box1 {order: 2}
 }
 @media screen and (min-width:768px) {
+  .top_movie video{
+  display: block;
+  }
   .small_menu {
     display: none;
   }

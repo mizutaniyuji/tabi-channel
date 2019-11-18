@@ -103,7 +103,7 @@
   </ol>
   
   <!--再度、登録を促す-->
-  <div href="#" class="remind_register">今すぐ登録する</div>
+  <div href="#" class="remind">今すぐ登録する</div>
   
   <!--最後の締めの言葉-->
   <div class="last_message animated fadein">
@@ -117,10 +117,6 @@
   
 </div>
 
-
-
-
-
     
   <footer>
       <!--コピーライト-->
@@ -128,11 +124,12 @@
         Copyright &copy; 2019 TabiChannel All Rights Reserved.
       </div>
   </footer>
-    
+  
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 </body>
   
 </html>

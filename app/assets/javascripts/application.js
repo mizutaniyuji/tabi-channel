@@ -1,10 +1,13 @@
 //= require jquery
-//= require jquery_ujs
+//= require jquery.turbolinks
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
 //= require_tree .
 
 // 特定の位置までスクロール
-$('.remind_register').click(function() {
-  $("html,body").animate({scrollTop:$(".top_introduction").offset().top});
+$(".remind").click(function() {
+  $("html,body").animate({scrollTop:$(".input_container").offset().top});
 });
 
 

@@ -57,8 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 
 gem 'jquery-rails'
-
-gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
 
 gem 'carrierwave'
 
