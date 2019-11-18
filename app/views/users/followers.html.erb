@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TabiChannel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+    <%= stylesheet_link_tag 'bootstrap/bootstrap.min', media: 'all' %>
+    <%= stylesheet_link_tag 'bootstrap/bootstrap', media: 'all' %>
+    <%= stylesheet_link_tag 'style_follow', media: 'all' %>
+    <%= stylesheet_link_tag 'normalize', media: 'all' %>
+    <%= stylesheet_link_tag 'animate', media: 'all' %>
+    
+  </head>
+
+<body>
+<div class="wrapper">
+    
+<!--ヘッダー-->
+<%= render 'layouts/navbar2' %>
+
+<div class="content_wrapper">
+
+<div class="follow_title"><h1>フォロワー</h1></div>
+
+<% if @followers.any? %>
+    <!--フォローしているユーザーの表示-->
+    <% @followers.each do |follower_user|%>
+    <!--プロフィール画像-->
+    <div class="top_container">
+        <div class="col-sm-3">
+            <div class="profile_image">
+            <% if follower_user.image? %>
+                <%= image_tag follower_user.image.url, :class => "profile_image"%>
+            <% else %>
+                <img src="https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570983635/profile_zhxwvs.png">
+            <% end %>
+            </div>
+        </div>
+        <div class="col-sm-9 user_container">
+            <!--ユーザー名-->
+            <div class="user_name"><a href="<%= user_path(follower_user)%>" ><%= follower_user.name %></a></div>
+            <!--フォローボタン or フォロー解除ボタン-->
+            <div class="unfollow_button_div">
+                <% unless current_user == follower_user %>
+                  <% if current_user.following?(follower_user) %>
+                    <%= form_with(model: current_user.relationships.find_by(follow_id: follower_user.id), local: true, method: :delete) do |f| %>
+                      <%= hidden_field_tag :follow_id, follower_user.id %>
+                      <%= f.submit 'Unfollow', class: 'unfollow_button' %>
+                    <% end %>
+                  <% else %>
+                    <%= form_with(model: current_user.relationships.build, local: true) do |f| %>
+                      <%= hidden_field_tag :follow_id, follower_user.id %>
+                      <%= f.submit 'Follow', class: 'follow_button' %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+            </div>
+            <!--自己紹介文-->
+            <div class="introduction">
+                <p><%= follower_user.introduction %></p>
+            </div>
+        </div>
+    </div>
+
+    <% end %>
+    <!--最下層線用-->
+    <div class="border"></div>
+<% else %>
+    <div style="position:relative; top:100px;"><h4>まだフィロワーはいません</h4></div>
+<% end %>
+
+</div>
+
+  <footer>
+      <!--コピーライト-->
+      <div id="copyright">
+        Copyright &copy; 2019 TabiChannel All Rights Reserved.
+      </div>
+  </footer>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</div>    
+</body>
+  
+</html>

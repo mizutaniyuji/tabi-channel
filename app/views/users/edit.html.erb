@@ -36,7 +36,7 @@
      <%= form_with(model: @user, local: true) do |f| %>
      <!--画像のアップロード-->
       <div class="image_upload_container">
-        <p><%= f.file_field :image, :class => "upload_button"%></p>
+        <p><%= f.file_field :image, class:"upload_button" %></p>
       </div>
 
     </div>

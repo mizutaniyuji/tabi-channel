@@ -93,20 +93,23 @@ ul {
 
 .top_container {
   display: block;
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
   border-top: solid 1px black;
 }
 /*プロフィール画像*/
 .profile_image {
+  position: relative;
+  top: 5px;
   border-radius: 50%;
-  height: auto;
-  margin: 0 auto;
-  width: 40%;
+  margin: 0 auto 15px auto;
+  width: 100px;
+  height: 100px;
+  
 }
 
 .border {
-  width: 70%;
+  width: 60%;
   border-top: solid 1px black;
   margin: 0 auto;
 }
@@ -173,6 +176,12 @@ ul {
 }
 
 /*フォローボタンの装飾*/
+.follow_button {
+  background-color: #00F;
+  color: white;
+}
+
+/*アンフォローボタンの装飾*/
 .unfollow_button {
   background-color: #FF3366;
   color: white;
@@ -186,13 +195,11 @@ ul {
 
 /*フッター*/
 footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
-  /*width: 100%;*/
-  margin-top: 30px;
+  width: 100%;
+  margin: 0 auto;
 }
-
-
 
 /*レスポンシブ対応*/
 /*@media screen and (max-width:400px) {*/
@@ -213,12 +220,6 @@ footer {
   }
   .image_upload {
   width: 55%;
-  }
-  footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin: 0 auto;
   }
   .community_item {
   width: 400px;
