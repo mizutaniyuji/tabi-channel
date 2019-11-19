@@ -64,5 +64,3 @@ gem 'carrierwave'
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
-
-gem 'sqlite3', group: [:development, :test]
